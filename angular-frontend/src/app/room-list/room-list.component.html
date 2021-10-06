@@ -1,0 +1,20 @@
+<h2 id="rl"> Rooms List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Country</th>
+            <th> on_off </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let room of rooms">
+            <td> {{ room.id }} </td>
+            <td> {{ room.country }} </td>
+            <td *ngIf="room.on_off"> ON </td>
+            <td *ngIf="room.on_off==false"> OFF </td>
+            <td> <button *ngIf="room.country===countryByIp.country" (click)="updateRoom(room.id)" class="btn btn-info">Enter</button> </td>
+        </tr>
+    </tbody>
+</table>
